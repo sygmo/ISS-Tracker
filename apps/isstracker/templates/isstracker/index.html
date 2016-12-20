@@ -4,13 +4,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ISS Tracker</title>
+
+	<!-- JavaScript -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="{% static 'isstracker/iss_map.js' %}"></script>
+	<!-- Leaflet CSS and JavaScript files -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<!-- My static files -->
+	<link rel="stylesheet" type="text/css" href="{% static 'isstracker/styles.css' %}?v=00001">
+	<script type="text/javascript" src="{% static 'isstracker/iss_map.js' %}?v=00001"></script>
 </head>
 <body>
-	<h1>Main page</h1>
-	<p>
-  		
-	</p>
+	<h1>International Space Station</h1>
+	<div id="mapid"></div>
+
+	<div class="column">
+		<h3>Where is the ISS now?</h3>
+		<div id="latitude"></div>
+		<div id="longitude"></div>
+	</div>
+	<div class="column">
+		<h3>How many people are in space right now?</h3>
+		<p id="num-people"></p>
+		<ul id="astronauts"></ul>
+	</div>
+	<div class="column">
+		<a class="twitter-timeline" data-width="221" data-height="400" href="https://twitter.com/Space_Station">Tweets by Space_Station</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+
+	<div>
+		<form action='/flyby' method='post'>
+			{% csrf_token %}
+			Your Latitude: <input type='text' name='latitude'>
+			Your Longitude: <input type='text' name='longitude'>
+		  	<input type='submit' value='Find next flyby time'>
+		</form>
+	</div>
+	<div>Get email updates when the ISS passes overhead!</div>
+	
 </body>
 </html>

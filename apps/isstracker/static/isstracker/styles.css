@@ -1,0 +1,24 @@
+* {
+	color: white;
+}
+
+body {
+	background-color: black;
+}
+
+#mapid {
+	height: 400px;
+	max-width: 100%;
+}
+
+.column {
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;
+}
+
+input {
+	color: black;
+}
+
+
