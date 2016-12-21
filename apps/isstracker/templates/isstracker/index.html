@@ -13,6 +13,8 @@
 	<!-- My static files -->
 	<link rel="stylesheet" type="text/css" href="{% static 'isstracker/styles.css' %}?v=00001">
 	<script type="text/javascript" src="{% static 'isstracker/iss_map.js' %}?v=00001"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 	<h1>International Space Station</h1>
@@ -39,8 +41,19 @@
 			Your Longitude: <input type='text' name='longitude'>
 		  	<input type='submit' value='Find next flyby time'>
 		</form>
+		{% if risetime %}
+		<p>The ISS will next rise at {{ risetime }}.</p>
+		<p>It will be in the sky for {{ duration }}.</p>
+		{%  endif %}
 	</div>
-	<div>Get email updates when the ISS passes overhead!</div>
+	<div>
+		<p>Get text alerts for when the ISS passes overhead!</p>
+		<form action='/alerts' method='post'>
+			{% csrf_token %}
+		  	<input type='submit' value='Sign up'>
+		</form>
+	</div>
+
 	
 </body>
 </html>

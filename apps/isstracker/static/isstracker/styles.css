@@ -1,15 +1,14 @@
-* {
-	color: white;
+#mapid {
+	height: 400px;
+	max-width: 100%;
 }
 
 body {
 	background-color: black;
 }
 
-#mapid {
-	height: 400px;
-	max-width: 100%;
-}
+
+
 
 .column {
 	display: inline-block;

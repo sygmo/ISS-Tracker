@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ISS Tracker</title>
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- My static files -->
+	<link rel="stylesheet" type="text/css" href="{% static 'isstracker/styles.css' %}?v=00001">
+</head>
+<body>
+	<h1>Sign up for flyby alerts:</h1>
+	<div>
+		<form action='/flyby' method='post'>
+			{% csrf_token %}
+			Latitude: <input type='text' name='latitude'>
+			Longitude: <input type='text' name='longitude'>
+			Cell #: <input type='text' name='cell_num'>
+		  	<input type='submit' value='Sign up'>
+		</form>
+		{% if risetime %}
+		<p>The ISS will next rise at {{ risetime }}.</p>
+		<p>It will be in the sky for {{ duration }}.</p>
+		{%  endif %}
+	</div>
+	<div>
+		<p>Get text alerts for when the ISS passes overhead!</p>
+		<form action='/send_text' method='post'>
+			{% csrf_token %}
+		  	<input type='submit' value='Send text'>
+		</form>
+	</div>
+
+	
+</body>
+</html>
