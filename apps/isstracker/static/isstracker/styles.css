@@ -1,7 +1,5 @@
-
-#mapid {
-	height: 400px;
-	max-width: 100%;
+* {
+	font-family: 'Titillium Web','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 body {
@@ -10,6 +8,36 @@ body {
 	background-position: right top;
 	background-attachment: fixed;
 	background-size: contain;
+}
+
+/*.navbar.navbar-inverse.navbar-fixed-top {
+	background-color: #EEEEEE;
+	color: #333333;
+}*/
+
+.jumbotron {
+/*	background-color: #222222;*/
+/*	background-color: #030206;
+	color: #9D9D9D;*/
+	background-image: url("iss1.jpg");
+/*	background-position: right top;*/
+	background-attachment: fixed;
+/*	background-size: contain;*/
+	background-size: cover;
+}
+
+#mapid {
+	height: 400px;
+	max-width: 100%;
+}
+
+.leaflet-container {
+	border-radius: 10px;
+	z-index: 0;
+}
+
+.row {
+	background: rgba(255, 255, 255, 0.7);
 }
 
 .col-lg- {
@@ -26,7 +54,11 @@ input {
 	color: black;
 }
 
-.leaflet-container {
-	border-radius: 10px;
-	z-index: 0;
+
+
+
+
+footer {
+	color: white;
 }
+
