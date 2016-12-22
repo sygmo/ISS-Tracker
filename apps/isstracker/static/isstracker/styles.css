@@ -5,7 +5,7 @@
 }
 
 body {
-	padding: 50px 40px 20px 40px;
+	padding: 50px 0px 20px 0px;
 	background-image: url("stars_texture.jpg");
 	background-position: right top;
 	background-attachment: fixed;
