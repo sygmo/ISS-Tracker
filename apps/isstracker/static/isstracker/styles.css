@@ -1,14 +1,20 @@
+
 #mapid {
 	height: 400px;
 	max-width: 100%;
 }
 
 body {
-	background-color: black;
+	padding: 50px 40px 20px 40px;
+	background-image: url("stars_texture.jpg");
+	background-position: right top;
+	background-attachment: fixed;
+	background-size: contain;
 }
 
+.col-lg- {
 
-
+}
 
 .column {
 	display: inline-block;
@@ -20,4 +26,7 @@ input {
 	color: black;
 }
 
-
+.leaflet-container {
+	border-radius: 10px;
+	z-index: 0;
+}
